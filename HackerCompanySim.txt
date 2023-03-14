@@ -1,0 +1,46 @@
+Let's make a game!
+
+name:Hacking company simulator
+desc:You have a company that has hacking services.
+by:Sunnystew
+version:0.1
+
+Settings
+building cost increase:115%
+building cost refund:50%
+stylesheet:stuff/bigBlue.css
+
+CSS
+  #game
+  {
+    background:cornflowerblue;
+    font-family:"Sans Serif",Sans,serif;
+    color:black;
+  }
+
+  .thing
+  {
+    border-radius:8px;
+    background:rgba(255,255,255,0.5);
+  }
+
+  #game.filtersOn .thing.cantAfford.notOwned
+  {
+    filter:blur(3px);
+  }
+
+
+Resources
+
+*money
+name:Money
+desc:This is your money, you get this when people need hacking services. You need this for upgrades and buildings.
+show earned
+
+Buttons
+
+*HackSomeone
+name:Hack someone
+desc:Click this button to hack someone to get money.
+class:bigButton
+on click:yield 1 money
