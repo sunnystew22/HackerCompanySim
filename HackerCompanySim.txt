@@ -81,4 +81,4 @@ name:Super powerful macros
 desc:The macros are even more powerful.
 cost:150 money
 req:10 macros
-on earn yield 15 MacroPower
+on earn:yield 15 MacroPower
