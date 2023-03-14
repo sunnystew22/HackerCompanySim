@@ -37,6 +37,11 @@ name:Money
 desc:This is your money, you get this when people need hacking services. You need this for upgrades and buildings.
 show earned
 
+*MacroPower
+name:Macro power
+desc:This is how powerful macros are.
+hidden
+
 Buttons
 
 *HackSomeone
@@ -44,3 +49,36 @@ name:Hack someone
 desc:Click this button to hack someone to get money.
 class:bigButton
 on click:yield 1 money
+
+Buildings
+
+*macro|macros
+name:Macro|Macros
+desc:Automatically does certain actions. Expensive, but powerful.
+cost:100 money
+on tick:yield 10 money
+
+*VM|VMs
+name:Virtual machine|Virtual machines
+desc:This can help if you want to DDoS someone in the future. (This building works like an upgrade and still gives you MpS (Money per Second)!)
+cost:150 money
+on tick:yield 20 money
+passive:multiply yield of macros by MacroPower
+on earn:yield 1 MacroPower
+on lose:lose 1 MacroPower
+
+Upgrades
+
+*u1
+name:More powerful macros
+desc:The macros are more powerful.
+cost:120 money
+on earn:yield 3 MacroPower
+req:3 macros
+
+*u2
+name:Super powerful macros
+desc:The macros are even more powerful.
+cost:150 money
+req:10 macros
+on earn yield 15 MacroPower
