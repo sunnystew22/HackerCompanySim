@@ -14,7 +14,7 @@ CSS
   #game
   {
     background:cornflowerblue;
-    font-family:"Fira Sans",SemiBold,serif;
+    font-family:"Segoe UI",Segoe,serif;
     color:black;
   }
 
