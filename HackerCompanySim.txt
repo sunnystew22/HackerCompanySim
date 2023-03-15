@@ -64,8 +64,8 @@ desc:This can help if you want to DDoS someone in the future. (This building wor
 cost:150 money
 on tick:yield 20 money
 passive:multiply yield of macros by MacroPower
-on earn:yield 1 MacroPower
-on lose:lose 1 MacroPower
+on earn:yield 0.1 MacroPower
+on lose:lose 0.1 MacroPower
 
 Upgrades
 
