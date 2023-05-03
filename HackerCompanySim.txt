@@ -1,9 +1,10 @@
 Let's make a game!
 
 name:Hacking company simulator
-desc:You have a company that has hacking services.
+desc:You have a company that has hacking services. Currently this game is in alpha.<//>v0.1.2 <q>The DDoS update</q>
+<.>Added DDoSing machines<//><.>Added SHA-256 money protection<//><.>Added bank account stealing<//><//>Coming soon: v0.2 - Adds a LOT of stuff
 by:Sunnystew
-version:0.1
+version:0.1.2
 
 Settings
 building cost increase:115%
@@ -37,10 +38,19 @@ name:Money
 desc:This is your money, you get this when people need hacking services. You need this for upgrades and buildings.
 show earned
 
+//This is how macros get more powerful with upgrades.
 *MacroPower
 name:Macro power
 desc:This is how powerful macros are.
 hidden
+start with 0
+
+//This is how you will not lose money with the SHA-256 bank protection
+*LosingMoney
+nane:Losing money
+desc:This is how you will not lose money with the SHA-256 bank protection
+hidden
+start with 0
 
 Buttons
 
@@ -67,6 +77,28 @@ passive:multiply yield of macros by MacroPower
 on earn:yield 0.1 MacroPower
 on lose:lose 0.1 MacroPower
 
+*ddosMachine|ddosMachines
+name:DDoS Machine|DDoS Machines
+desc:These are virtual machines with a specific operating system meant for DDoSing.
+cost:300 money
+on tick:yield 50 money
+passive:multiply yield of macros by MacroPower
+on earn:yield 0.1 MacroPower
+on lose:lose 0.1 MacroPower
+req:u5
+
+*bankAccStealer|bankAccStealers
+name:Bank account stealer|Bank account stealers
+desc:This is a program you can install on your virtual machines so you can steal money from people's bank accounts.
+on tick:yield 300 money
+cost:350 money
+passive:multiply yield of macros by MacroPower
+on earn:yield 0.1 MacroPower
+on lose:lose 0.1 MacroPower
+on tick: lose LosingMoney money
+on earn:yield 50 LosingMoney
+on lose:lose 50 LosingMoney
+
 Upgrades
 
 *u1
@@ -82,3 +114,40 @@ desc:The macros are even more powerful.
 cost:150 money
 req:10 macros
 on earn:yield 15 MacroPower
+
+*u3
+name:+8 GB RAM
+desc:You now have 12 GB RAM instead of 4 GB, meaning you can have more virtual machines and more macros!
+cost:230 money
+req:5 VMs
+passive:multiply yield of VMs by 5
+passive:multiply yield of macros by 5
+
+*u4
+name:+16 GB RAM
+desc:You now have 28 GB of RAM, meaning you can have more and more powerful virtual machines and macros!
+cost:250 money
+req:10 VMs
+passive:multiply yield of VMs by 10
+passive:multiply yield of macros by 10
+on earn:yield 30 MacroPower
+
+*u5
+name:+32 GB RAM
+desc:You now have 60 GB of RAM, meaning you can have more and more powerful virtual machines and macros plus you can now DDoS people!!
+cost:270 money
+req:15 VMs
+passive:multiply yield of VMs by 15
+passive:multiply yield of macros by 15
+on earn:yield 40 MacroPower
+
+*u6
+name:SHA-1 protection >> SHA-256 protection
+desc:This upgrade makes your bank account more secure meaning you will not lose money from bank account stealers.
+cost:300 money
+req:20 VMs
+req:10 VMs
+passive:multiply yield of VMs by 20
+passive:multiply yield of macros by 20
+on earn:yield 50 MacroPower
+on earn:yield LosingMoney money
