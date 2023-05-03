@@ -45,7 +45,7 @@ start with:0
 
 //This is how you will not lose money with the SHA-256 bank protection
 *LosingMoney
-nane:Losing money
+name:Losing money
 desc:This is how you will not lose money with the SHA-256 bank protection
 hidden
 start with:0
