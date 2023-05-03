@@ -1,9 +1,8 @@
 Let's make a game!
 
 name:Hacking company simulator
-desc:You have a company that has hacking services. Currently this game is in alpha.<//>v0.1.2 <q>The DDoS update</q> <.>Added DDoSing machines<//><.>Added SHA-256 money protection<//><.>Added bank account stealing<//><//>Coming soon: v0.2 - Adds a LOT of stuff
-by:Sunnystew
-version:0.1.2
+desc:You have a company that has hacking services. Currently this game is in alpha.<//>v0.2 <q>The DDoS update</q> <.>Added DDoSing machines<//><.>Added SHA-256 money protection<//><.>Added bank account stealing<//>
+version:0.2
 
 Settings
 building cost increase:115%
@@ -42,14 +41,14 @@ show earned
 name:Macro power
 desc:This is how powerful macros are.
 hidden
-start with 0
+start with:0
 
 //This is how you will not lose money with the SHA-256 bank protection
 *LosingMoney
 nane:Losing money
 desc:This is how you will not lose money with the SHA-256 bank protection
 hidden
-start with 0
+start with:0
 
 Buttons
 
